@@ -1,0 +1,592 @@
+/* 首先进行初始化 */
+body{
+    color: #000;
+    overflow-x: hidden;
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    background: #f4f4f4;
+    font: normal 16px/1.5 PingFangSC-regular,Tahoma,Lucida Grande,Verdana,Microsoft Yahei,STXihei,hei;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+/* 主文档流,主要是设定宽度 */
+.main-flow{
+    width: 100%;
+    /* height: 200px; */
+    max-width: 540px;
+}
+/* 搜索栏区域样式 外部框架 */
+.search-index{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    max-width: 540px;
+    position: fixed;
+    z-index: 100;
+    background-color: #fff;
+    /* background-color: #0f0; */
+}
+/* 搜索输入框样式 */
+.search-input{
+    position: relative;
+    box-sizing: border-box;
+    margin: 9px 12px;
+    border-radius: 16px;
+    border: 2px solid #0086f6;
+    flex: 1;
+    background-color: #fff;
+}
+/* 搜搜输入框文本 */
+.search-input span{
+    padding-left: 42px;
+    font-size: 15px;
+    color: #999;
+    line-height: 28px;
+}
+/* 在文本前插入图标 */
+.search-input span::before{
+    position: absolute;
+    left: 10px;
+    content: "\eae6";
+    font-family: 'icomoon' !important;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 28px;
+}
+
+/* 下面开始导航栏区域的样式 */
+.nav-index{
+    display: flex;
+    /* 因为搜索区域是固定定位,所以不占高度,所以需要一个padding或margin */
+    padding: 6px 12px 2px;
+    padding-top: 56px;
+    height: 176px;
+    background-color: #fff;
+}
+/* 每一列所占区域 */
+.nav-index ul{
+    flex: 1;
+    /* background-color: #0f0; */
+    margin-right: 1px;
+}
+/* 每一行所占区域 */
+.nav-index ul li{
+    flex: 1;
+    height: 58px;
+    /* background-color: #fff; */
+    margin-bottom: 1px;
+    text-align: center;
+}
+/* 将整个li区域都可以选中为a */
+.nav-index ul li a{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* 先给所有图片添加属性*/
+.nav-index ul li a span:nth-child(1){
+    width: 28px;
+    height: 28px;
+    /* background-color: pink; */
+    margin: 0px 0px 4px;
+}
+/* 给第一列加背景 */
+.nav-fir-column li:nth-child(1){ 
+    border-top-left-radius: 8px;
+    background: linear-gradient(180deg, #fa5956,#fb8650);
+}
+.nav-fir-column li:nth-last-child(-n+2){
+    background-color: #fff5f1;
+}
+/* 给第二列加背景 */
+.nav-sec-column li:nth-child(1){ 
+    background-image: linear-gradient(180deg,#3c83fa,#50b2fa);
+}
+.nav-sec-column li:nth-last-child(-n+2){
+    background-color: #eff9ff;
+}
+/* 给第三列加背景 */
+.nav-thi-column li:nth-child(1){ 
+    background-image: linear-gradient(0deg,#66a4ff,#5e80ff);
+}
+.nav-thi-column li:nth-last-child(-n+2){
+    background-color: #f2f5ff;
+}
+/* 给第四列加背景 */
+.nav-fou-column li:nth-child(1){ 
+    background-image: linear-gradient(180deg,#2fc3b6,#52d9b3);
+}
+.nav-fou-column li:nth-last-child(-n+2){
+    background-color: #ecfcf8;
+}
+/* 给第五列加背景 */
+.nav-fiv-column li:nth-child(1){ 
+    border-top-right-radius: 8px;
+    background-image: linear-gradient(0deg,#ffa846,#ff8939);
+}
+.nav-fiv-column li:nth-last-child(-n+2){
+    background-color: #fff9f2;
+}
+
+/* 给第一列所有元素添加图片背景 */
+.nav-fir-column li:nth-child(1) a span:nth-child(1){
+    background-image: url("/m.ctrip/images/nav.png");
+    background-position: 0 -84px;
+    background-size: 28px auto;
+}
+.nav-fir-column li:nth-child(2) a span:nth-child(1){
+    background-image: url("/m.ctrip/images/nav.png");
+    background-position: 0 -336px;
+    background-size: 28px auto;
+}
+.nav-fir-column li:nth-child(3) a span:nth-child(1){
+    background-image: url("/m.ctrip/images/nav.png");
+    background-position: 0 0;
+    background-size: 28px auto;
+}
+/* 给第二列所有元素添加图片背景 */
+.nav-sec-column li:nth-child(1) a span:nth-child(1){
+    background-image: url("/m.ctrip/images/nav.png");
+    background-position: 0 -168px;
+    background-size: 28px auto;
+}
+.nav-sec-column li:nth-child(2) a span:nth-child(1){
+    background-image: url("/m.ctrip/images/nav.png");
+    background-position: 0 -56px;
+    background-size: 28px auto;
+}
+.nav-sec-column li:nth-child(3) a span:nth-child(1){
+    background-image: url("/m.ctrip/images/nav.png");
+    background-position: 0 -280px;
+    background-size: 28px auto;
+}
+/* 给第三列添加图片 */
+.nav-thi-column li:nth-child(1) a span:nth-child(1){
+    background-image: url("/m.ctrip/images/nav.png");
+    background-position: 0 -364px;
+    background-size: 28px auto;
+}
+.nav-thi-column li:nth-child(2) a span:nth-child(1){
+    background-image: url("/m.ctrip/images/nav.png");
+    background-position: 0 -224px;
+    background-size: 28px auto;
+}
+.nav-thi-column li:nth-child(3) a span:nth-child(1){
+    background-image: url("/m.ctrip/images/nav.png");
+    background-position: 0 -252px;
+    background-size: 28px auto;
+}
+/* 第四列添加图片 */
+.nav-fou-column li:nth-child(1) a span:nth-child(1){
+    background-image: url("/m.ctrip/images/nav.png");
+    background-position: 0 -140px;
+    background-size: 28px auto;
+}
+.nav-fou-column li:nth-child(2) a span:nth-child(1){
+    background-image: url("/m.ctrip/images/nav.png");
+    background-position: 0 -196px;
+    background-size: 28px auto;
+}
+.nav-fou-column li:nth-child(3) a span:nth-child(1){
+    background-image: url("/m.ctrip/images/nav.png");
+    background-position: 0 -392px;
+    background-size: 28px auto;
+}
+/* 第五列添加图片 */
+.nav-fiv-column li:nth-child(1) a span:nth-child(1){
+    background-image: url("/m.ctrip/images/nav.png");
+    background-position: 0 -28px;
+    background-size: 28px auto;
+}
+.nav-fiv-column li:nth-child(2) a span:nth-child(1){
+    background-image: url("/m.ctrip/images/nav.png");
+    background-position: 0 -112px;
+    background-size: 28px auto;
+}
+.nav-fiv-column li:nth-child(3) a span:nth-child(1){
+    background-image: url("/m.ctrip/images/nav.png");
+    background-position: 0 -308px;
+    background-size: 28px auto;
+}
+/* 对文字样式进行设置 */
+.nav-index ul li a span:nth-child(2){
+    height: 15px;
+    font-size: 12px;
+    font-family: PingFangSC-Medium;
+    text-align: center;
+    line-height: 15px;
+    color: #fff;
+}
+.nav-index ul li:nth-last-child(-n+2) a span:nth-child(2){
+    color: #000;
+}
+
+/* 先看下隐藏的导航栏 */
+.nav-sec-page{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 346px;
+    padding: 56px 12px 0px;
+    background-color: #fff;
+}
+/* 为ul设置flex属性 */
+.nav-sec-page ul{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+.nav-sec-page ul li{
+    width: 20%;
+}
+.nav-sec-page ul li a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nav-sec-page ul li a span:nth-child(1){
+    width: 28px;
+    height: 28px;
+    /* background-color: skyblue; */
+    background-image: url("/m.ctrip/images/subnav.png");
+    background-size: 28px auto;
+}
+.nav-sec-page ul li a span:nth-child(2){
+    font-size: 12px;
+    text-align: center;
+}
+
+/* 开始第一行插入图片 */
+.nav-fir-row li:nth-child(1) a span:nth-child(1){
+    background-position: 0 -84px;
+}
+.nav-fir-row li:nth-child(2) a span:nth-child(1){
+    background-position: 0 0;
+}
+.nav-fir-row li:nth-child(3) a span:nth-child(1){
+    background-position: 0 -420px;
+}
+.nav-fir-row li:nth-child(4) a span:nth-child(1){
+    background-position: 0 -504px;
+}
+.nav-fir-row li:nth-child(5) a span:nth-child(1){
+    background-position: 0 -168px;
+}
+/* 开始第二行插入图片 */
+.nav-sec-row li:nth-child(1) a span:nth-child(1){
+    background-position: 0 -532px;
+}
+.nav-sec-row li:nth-child(2) a span:nth-child(1){
+    background-position: 0 -392px;
+}
+.nav-sec-row li:nth-child(3) a span:nth-child(1){
+    background-position: 0 -280px;
+}
+.nav-sec-row li:nth-child(4) a span:nth-child(1){
+    background-position: 0 -448px;
+}
+.nav-sec-row li:nth-child(5) a span:nth-child(1){
+    background-position: 0 -252px;
+}
+/* 开始第三行插入图片 */
+.nav-thi-row li:nth-child(1) a span:nth-child(1){
+    background-position: 0 -224px;
+}
+.nav-thi-row li:nth-child(2) a span:nth-child(1){
+    background-position: 0 -560px;
+}
+.nav-thi-row li:nth-child(3) a span:nth-child(1){
+    background-position: 0 -112px;
+}
+.nav-thi-row li:nth-child(4) a span:nth-child(1){
+    background-position: 0 -56px;
+}
+.nav-thi-row li:nth-child(5) a span:nth-child(1){
+    background-position: 0 -140px;
+}
+/* 开始第四行插入图片 */
+.nav-fou-row li:nth-child(1) a span:nth-child(1){
+    background-position: 0 -476px;
+}
+.nav-fou-row li:nth-child(2) a span:nth-child(1){
+    background-position: 0 -336px;
+}
+.nav-fou-row li:nth-child(3) a span:nth-child(1){
+    background-position: 0 -196px;
+}
+.nav-fou-row li:nth-child(4) a span:nth-child(1){
+    background-position: 0 -28px;
+}
+.nav-fou-row li:nth-child(5) a span:nth-child(1){
+    background-position: 0 -308px;
+}
+/* 第五行插入图片 */
+.nav-fou-row li:nth-child(1) a span:nth-child(1){
+    background-position: 0 -364px;
+}
+
+/* 开始隐藏次导航栏 */
+.navigation{
+    width: 100%;
+    /* overflow: visible; */
+    overflow: hidden;
+}
+.nav-move{
+    width: 200%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.nav-index , .nav-sec-page{
+    flex: 1;
+}
+
+/* 导航栏切换时的按钮 */
+.change-point{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 24px;
+    padding-top: 4px;
+    /* background-color: pink; */
+    transform: translateY(-114px);
+}
+.change-point ul{
+    position: absolute;
+    left: 50%;
+    top: 6px;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 5px;
+    /* background-color: #fff; */
+    display: flex;
+}
+.change-point ul li{
+    flex: 1;
+    height: 5px;
+    background-color: #aaa;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+.change-point ul li.current-page{
+    flex: 4;
+    background-color: #0086f6;
+}
+
+/* 开始轮播图的样式设计 */
+.recommend-index{
+    box-sizing: border-box;
+    width: 100%;
+    height: 148px;
+    padding-left: 8px;
+    background-color: pink;
+    display: flex;
+}
+/* 将两个区域划分好 */
+.recommend-first, .recommend-second{
+    flex: 1;
+    margin-right: 8px;
+    background-color: greenyellow;
+
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    border-radius: 8px;
+}
+.special{
+    height: 20px;
+    margin-bottom: 6px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.special img{
+    height: 20px;
+    width: auto;
+}
+.special span{
+    width: 92px;
+    height: 18px;
+    font-size: 10px;
+    color: #ff4607;
+    background-color: #ffebe3;
+    border-radius: 2px;
+    line-height: 18px;
+    text-align: center;
+}
+.recommend-first .div-first{
+    width: 100%;
+    height: 84px;
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+/* 这个是轮播图左上角的小方块 */
+.div-first span.hotel{
+    position: absolute;
+    width: 48px;
+    height: 14px;
+    top: 0;
+    left: 0;
+    padding: 0 3px;
+    background-color: rgba(51,51,51,.8);
+    z-index: 9;
+    font-size: 10px;
+    color: #ccc;
+    text-align: center;
+    line-height: 14px;
+    border-radius: 6px 0 6px 0;
+}
+/* 这个是轮播图图片的介绍 */
+.intro-items{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 500%;
+    height: 12px;
+    top: 68px;
+    left: 6px;
+    /* background-color: #000; */
+}
+.intro-items span{
+    flex: 1;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 12px;
+}
+/* 轮播图图片连成一长块 */
+.div-first ul{
+    width: 500%;
+    height: 84px;
+    margin-bottom: 4px;
+    /* background-color: skyblue; */
+    display: flex;
+    flex-direction: row;
+}
+.div-first ul li{
+    flex: 1;
+    width: 20%;
+    height: 100%;
+}
+/* 开始加入图片 */
+.div-first ul li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+}
+/* 让图片在显示区域内垂直居中 */
+.div-first ul li a img{
+    width: 100%;
+    height: auto;
+    padding-top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+/* 轮播图底部的价格 */
+.recommend-footer{
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+}
+.recommend-footer ul{
+    width: 500%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* background-color: #fff; */
+}
+.recommend-footer ul li{
+    flex: 1;
+    height: 100%;
+    float: left;
+}
+/* 价格的人民币标识符 */
+.recommend-footer  ul li i{
+    float: left;
+    font-style: normal;
+    font-size: 11px;
+    font-weight: 700;
+    color: #f60;
+    margin-right: 0;
+    transform: translateY(4px);
+}
+/* 价格数字 */
+.recommend-footer ul li span:nth-child(2){
+    float: left;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 2px;
+    color: #f60;
+}
+/* 过去的价格 */
+.recommend-footer ul li span:nth-child(3){
+    float: left;
+    font-size: 10px;
+    font-weight: 400;
+    color: #666;
+    margin-top: 2px;
+    text-decoration: line-through;
+}
+/* 总共降低了多少价格 */
+.recommend-footer ul li span:nth-child(4){
+    float: left;
+    margin-left: 2px;
+    margin-top: 2px;
+    background-image: linear-gradient(90deg,#fa5956,#fb8650);
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 400;
+    color: #fff;
+}
+
+/* 开始表示次序的点 */
+.div-first ol{
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    margin: 0;
+    padding: 0;
+    width: 45px;
+    height: 5px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    z-index: 10;
+}
+.div-first ol li{
+    flex: 1;
+    margin-right: 5px;
+    border-radius: 5px;
+    background-color: #ccc;
+}
+.div-first ol li.now-point{
+    flex: 4;
+    background-color: #fff;
+}
