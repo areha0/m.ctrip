@@ -3,7 +3,15 @@ window.onload = function(){
     const nav = document.querySelector(".nav-move");
     const navArrs = document.querySelectorAll(".nav");
     const view = document.querySelector(".navigation")
+    // 这个是左右导航栏索引的点
     const changediv = document.querySelector(".change-point");
+    // 这个是推荐区域
+    const recommenddiv = document.querySelector(".recommend-index");
+    // 这个是直播广告页面
+    const addiv = document.querySelector('.ad-bottom');
+    // 这个是脚部页面
+    const footerdiv = document.querySelector(".page-footer");
+    const mainflow = document.querySelector(".main-flow");
     const pointArrs = document.querySelectorAll(".change-point ul li");
     
 
@@ -56,13 +64,28 @@ window.onload = function(){
                 pointArrs[i].className = "";
                 pointArrs[index].className = "current-page";
             } 
+            // 这个是主要适配左右导航栏拖拽时页面不整齐的问题
             if(index == 0){
                 changediv.style.transform = "translateY(-114px)";
                 changediv.style.transition = "all 0.3s"
-
+                recommenddiv.style.transform = "translateY(-114px)";
+                recommenddiv.style.transition = "all 0.3s"
+                addiv.style.transform = "translateY(-114px)";
+                addiv.style.transition = "all 0.3s"
+                footerdiv.style.transform = "translateY(-114px)";
+                footerdiv.style.transition = "all 0.3s"
+                // 下面就是解决拖拽后不同页面高度的问题
+                mainflow.style.overflow = "hidden";
             }else{
                 changediv.style.transform = "translateY(0)";
                 changediv.style.transition = "none"
+                recommenddiv.style.transform = "translateY(0)";
+                recommenddiv.style.transition = "none"
+                addiv.style.transform = "translateY(0)";
+                addiv.style.transition = "none"
+                footerdiv.style.transform = "translateY(0)";
+                footerdiv.style.transition = "none"
+                mainflow.style.overflow = "visible";
             }
         })
     })
@@ -131,6 +154,7 @@ window.onload = function(){
         intro.style.transition = "0.3s";
         price.style.transform = "translate("+ trasnlateWidth + "px)";
         price.style.transition = "0.3s";
+
         
     })
     ul.addEventListener("touchend", (event) => {
@@ -167,4 +191,24 @@ window.onload = function(){
             anoIndex++;
         },2000)
     })
+
+    // 还要解决的一个问题是,推荐页面视窗在170px的时候,
+    // 令其消失左边的小窗口
+    const special = document.querySelector(".recommend-first");
+    const span = document.querySelector(".special span");
+    const anospan = document.querySelector(".ano-special span");
+    
+    addEventListener("resize", (event) => {
+        if(special.offsetWidth <= 190){
+            span.style.display = "none";
+            anospan.style.display = "none";
+        }else{
+            span.style.display = "";
+            anospan.style.display = "";
+        }
+    })
+    const myword = `   终于是完成了,开始时也只是为了对刚学的flex布局进行练习,
+没想到却对移动端拖拽事件有了一个从0到1的基础认知,仿制携程页面过程中遇到了
+很多琐碎的问题,还好我坚持啃下来了,总之,结果不错。`
+    console.log(myword);
 }
