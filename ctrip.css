@@ -352,6 +352,7 @@ a{
     overflow: hidden;
 }
 .nav-move{
+    -webkit-overflow-scrolling: touch;
     width: 200%;
     display: flex;
     flex-direction: row;

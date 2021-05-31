@@ -207,6 +207,12 @@ window.onload = function(){
             anospan.style.display = "";
         }
     })
+
+    document.body.addEventListener("touchmove", (event) => {
+        event.preventDefault();
+    })
+
+
     const myword = `   终于是完成了,开始时也只是为了对刚学的flex布局进行练习,
 没想到却对移动端拖拽事件有了一个从0到1的基础认知,仿制携程页面过程中遇到了
 很多琐碎的问题,还好我坚持啃下来了,总之,结果不错。`
