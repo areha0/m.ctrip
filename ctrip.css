@@ -415,7 +415,10 @@ a{
     border-radius: 8px;
 }
 .recommend-first{
-    margin-right: 8px;
+    margin-right: 4px;
+}
+.recommend-second{
+    margin-left: 4px;
 }
 .special{
     height: 20px;
@@ -498,6 +501,7 @@ a{
 }
 
 .div-first ul{
+    -webkit-overflow-scrolling: touch;
     width: 500%;
     height: 84px;
     margin-bottom: 4px;
