@@ -642,6 +642,7 @@ a{
     font-size: 11px;
     color: #444;
     margin-top: 3px;
+    white-space: nowrap;
 }
 
 /* 华东小角标 */
@@ -662,14 +663,12 @@ a{
 .ad-bottom{
     box-sizing: border-box;
     width: 100%;
-    height: 141px;
     padding: 0 12px 12px 12px;
     margin-top: 10px;
     transform: translateY(-114px);
 }
 .ad-bottom img{
     width: 100%;
-    height: 129px;
     border-radius: 8px;
 }
 
@@ -704,6 +703,9 @@ a{
     color: #333;
     padding-left: 30px;
 }
+.tool-group a:nth-child(3){
+    padding-left: 25px;
+}
 
 .tool-group a:nth-child(1)::before{
     content: "\eacc";
@@ -737,7 +739,7 @@ a{
     content: "\e978";
     position: absolute;
     top: 2px;
-    left: 10px;
+    left: 8px;
     font-family: 'icomoon' !important;
     font-size: 14px;
     font-style: normal;
