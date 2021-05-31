@@ -33,6 +33,7 @@ window.onload = function(){
             nav.style.transform = "translateX("+currentWidth+"px)";
             nav.style.transition = "all 0.3s";
         }
+        document.body.addEventListener("touchmove", nomove(event) , {passive: false});
     })
     nav.addEventListener("touchend", (event) => {
         if(index==0 && movex<0){
@@ -90,6 +91,7 @@ window.onload = function(){
         })
     })
 
+
     // 开始轮播图的表演
     const imgArrs = document.querySelectorAll(".recommend-first div ul li a img");
     const viewdiv = document.querySelector(".recommend-first div");
@@ -139,6 +141,12 @@ window.onload = function(){
             
         }
     })
+
+    // 封装一个不让页面移动的函数,且之后能够去除掉
+    function nomove(event){
+        event.preventDefault();
+    }
+
     // 轮播图的点我们等会再做,先做拖拽
     let [start, move] = [0, 0];
     ul.addEventListener("touchstart", (event) => {
@@ -155,7 +163,12 @@ window.onload = function(){
         price.style.transform = "translate("+ trasnlateWidth + "px)";
         price.style.transition = "0.3s";
 
-        
+        // 这块是不让页面移动
+        document.body.addEventListener("touchmove", nomove(event) , {passive: false});
+        // document.body.addEventListener("touchmove", (eve) => {
+        //     eve.preventDefault();
+        // }, {passive: false})
+
     })
     ul.addEventListener("touchend", (event) => {
         if(Math.abs(move)>50){
@@ -207,10 +220,6 @@ window.onload = function(){
             anospan.style.display = "";
         }
     })
-
-    document.body.addEventListener("touchmove", (event) => {
-        event.preventDefault();
-    }, {passive: false});
 
 
     const myword = `   终于是完成了,开始时也只是为了对刚学的flex布局进行练习,
