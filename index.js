@@ -210,7 +210,7 @@ window.onload = function(){
 
     document.body.addEventListener("touchmove", (event) => {
         event.preventDefault();
-    })
+    }, {passive: false});
 
 
     const myword = `   终于是完成了,开始时也只是为了对刚学的flex布局进行练习,
