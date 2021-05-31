@@ -48,7 +48,7 @@ window.onload = function(){
             }
         }
         if(index==1 && movex>0){
-            if(Math.abs(movex)>150){
+            if(Math.abs(movex)>50){
                 currentWidth = -view.offsetWidth * (index-1);
                 nav.style.transform = "translateX("+currentWidth+"px)";
                 nav.style.transition = "all 0.3s";
