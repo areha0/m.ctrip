@@ -417,9 +417,7 @@ a{
 .recommend-first{
     margin-right: 4px;
 }
-.recommend-second{
-    margin-left: 4px;
-}
+
 .special{
     height: 20px;
     margin-bottom: 6px;
@@ -435,7 +433,7 @@ a{
 }
 .special span{
     height: 18px;
-    padding: 0 5px;
+    padding: 0 1px;
     font-size: 10px;
     color: #ff4607;
     background-color: #ffebe3;

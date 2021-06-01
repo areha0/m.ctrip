@@ -212,7 +212,7 @@ window.onload = function(){
     const anospan = document.querySelector(".ano-special span");
     
     // 页面一完成加载就对.special元素进行监控
-    if(special.offsetWidth <= 170){
+    if(special.offsetWidth <= 160){
         span.style.display = "none";
         anospan.style.display = "none";
     }else{
@@ -221,7 +221,7 @@ window.onload = function(){
     }
     // 窗口尺寸变化时推荐页面右上角直播入口去掉
     addEventListener("resize", (event) => {
-        if(special.offsetWidth <= 170){
+        if(special.offsetWidth <= 160){
             span.style.display = "none";
             anospan.style.display = "none";
         }else{
