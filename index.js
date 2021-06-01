@@ -20,6 +20,7 @@ window.onload = function(){
     // let pageHeight =  234+24+148+10+imgHeight+112+50; 
     let pageHeight = mainflow.offsetHeight - 114;
     mainflow.style.height = pageHeight + "px";
+    console.log(pageHeight)
 
     let index = 0;
     let currentWidth = -view.offsetWidth * index;
@@ -229,6 +230,7 @@ window.onload = function(){
     }
     // 窗口尺寸变化时推荐页面右上角直播入口去掉
     addEventListener("resize", (event) => {
+        mainflow.style.height = "";
         if(special.offsetWidth <= 160){
             span.style.display = "none";
             anospan.style.display = "none";
@@ -236,14 +238,13 @@ window.onload = function(){
             span.style.display = "";
             anospan.style.display = "";
         }
-        imgHeight = img.offsetHeight;
-        
+
         // 页面加载完成后,根据图片高度调整页面高度
-        let pageHeight = mainflow.offsetHeight - 114;
+        pageHeight = mainflow.offsetHeight - 114;
         mainflow.style.height = pageHeight + "px";
+        console.log(pageHeight)
     })
 
 
-    
     
 }
