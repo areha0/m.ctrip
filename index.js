@@ -13,7 +13,13 @@ window.onload = function(){
     const footerdiv = document.querySelector(".page-footer");
     const mainflow = document.querySelector(".main-flow");
     const pointArrs = document.querySelectorAll(".change-point ul li");
-    
+    // 图片不是固定高度的,所以要根据图片的高度,确定页面的高度
+    // const img = document.querySelector(".ad-bottom img");
+    // let imgHeight = img.offsetHeight;
+    // 页面加载完成后,根据图片高度调整页面高度
+    // let pageHeight =  234+24+148+10+imgHeight+112+50; 
+    let pageHeight = mainflow.offsetHeight - 114;
+    mainflow.style.height = pageHeight + "px";
 
     let index = 0;
     let currentWidth = -view.offsetWidth * index;
@@ -75,8 +81,8 @@ window.onload = function(){
                 addiv.style.transition = "all 0.3s"
                 footerdiv.style.transform = "translateY(-114px)";
                 footerdiv.style.transition = "all 0.3s"
-                // 下面就是解决拖拽后不同页面高度的问题
                 mainflow.style.overflow = "hidden";
+                // 下面就是解决拖拽后不同页面高度的问题
             }else{
                 changediv.style.transform = "translateY(0)";
                 changediv.style.transition = "none"
@@ -211,6 +217,8 @@ window.onload = function(){
     const span = document.querySelector(".special span");
     const anospan = document.querySelector(".ano-special span");
     
+    
+
     // 页面一完成加载就对.special元素进行监控
     if(special.offsetWidth <= 160){
         span.style.display = "none";
@@ -228,11 +236,14 @@ window.onload = function(){
             span.style.display = "";
             anospan.style.display = "";
         }
+        imgHeight = img.offsetHeight;
+        
+        // 页面加载完成后,根据图片高度调整页面高度
+        let pageHeight = mainflow.offsetHeight - 114;
+        mainflow.style.height = pageHeight + "px";
     })
 
 
-    const myword = `   终于是完成了,开始时也只是为了对刚学的flex布局进行练习,
-没想到却对移动端拖拽事件有了一个从0到1的基础认知,仿制携程页面过程中遇到了
-很多琐碎的问题,还好我坚持啃下来了,总之,结果不错。`
-    console.log(myword);
+    
+    
 }

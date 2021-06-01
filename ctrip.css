@@ -21,7 +21,6 @@ a{
 /* 主文档流,主要是设定宽度 */
 .main-flow{
     width: 100%;
-    height: 715px;
     overflow: hidden;
     max-width: 540px;
 }
