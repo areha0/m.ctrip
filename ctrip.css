@@ -633,7 +633,7 @@ a{
 }
 .intro-left , .intro-right{
     width: 100%;
-    height: 84px;
+    height: 104px;
     display: flex;
     flex-direction: column;
 }
@@ -643,11 +643,14 @@ a{
     border-radius: 8px;
 }
 .intro-left span, .intro-right span{
+    display: inline-block;
     font-family: PingFangSC-Semibold;
+    width: 100%;
+    height: 20px;
     font-size: 11px;
     color: #444;
     margin-top: 3px;
-    white-space: nowrap;
+    overflow: hidden;
 }
 
 /* 华东小角标 */

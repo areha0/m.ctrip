@@ -207,12 +207,21 @@ window.onload = function(){
 
     // 还要解决的一个问题是,推荐页面视窗在170px的时候,
     // 令其消失左边的小窗口
-    const special = document.querySelector(".recommend-first");
+    const special = document.querySelector(".special");
     const span = document.querySelector(".special span");
     const anospan = document.querySelector(".ano-special span");
     
+    // 页面一完成加载就对.special元素进行监控
+    if(special.offsetWidth <= 170){
+        span.style.display = "none";
+        anospan.style.display = "none";
+    }else{
+        span.style.display = "";
+        anospan.style.display = "";
+    }
+    // 窗口尺寸变化时推荐页面右上角直播入口去掉
     addEventListener("resize", (event) => {
-        if(special.offsetWidth <= 190){
+        if(special.offsetWidth <= 170){
             span.style.display = "none";
             anospan.style.display = "none";
         }else{
